@@ -18,7 +18,13 @@ export default function App() {
 		<div className="app">
 			<div className="container">
 				{videos.map((data, ind) => {
-					return <Video url={data.url} />
+					return <Video 
+								key={data.url}
+								channel={data.channel}
+								description={data.description}
+								song={data.song}
+								url={data.url}
+								 />
 				})}
 			</div>
 		</div>
