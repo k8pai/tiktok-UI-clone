@@ -1,17 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './FooterRight.css'
+import FavouriteIcon from './icons/FavouriteIcon'
 import FavoriteBorderIcon from './icons/FavouriteBordered'
 import MessageIcon from './icons/Message'
 import ShareIcon from './icons/Share'
 
 function FooterRight({ likes, shares, messages}) {
+	const [liked, setLiked] = useState(false)
+	const [likeCount, setLikeCount] = useState(likes)
+	
 	return (
 		<div className="footer-right">
 			<div className="sidebar-icon">
-				<FavoriteBorderIcon
-					style={{ width: '40px', height: '40px' }}
-				/>
-				<p>{likes}</p>
+				{liked?
+					<FavouriteIcon
+						style={{ width: '40px', height: '40px' }}
+						onClick={() => {
+							setLiked(value => !value);
+							setLikeCount(value => value-1);
+						}}
+					/>:
+					<FavoriteBorderIcon
+						style={{ width: '40px', height: '40px' }}
+						onClick={() => {
+							setLiked(value => !value);
+							setLikeCount(value => value+1);
+						}}
+					/>
+				}
+				<p>{likeCount}</p>
 			</div>
 			<div className="sidebar-icon">
 				<MessageIcon style={{ width: '40px', height: '40px' }} />
