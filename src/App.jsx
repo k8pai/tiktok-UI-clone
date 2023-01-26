@@ -20,7 +20,6 @@ export default function App() {
 				{videos.map((data, ind) => {
 					return <Video url={data.url} />
 				})}
-				<Video url="https://github.com/codedamn-classrooms/tiktok-react-material/raw/main/v1.mp4" />
 			</div>
 		</div>
 	)
