@@ -23,6 +23,9 @@ export default function App() {
 								channel={data.channel}
 								description={data.description}
 								song={data.song}
+								likes={data.likes}
+								shares={data.shares}
+								messages={data.messages}
 								url={data.url}
 								 />
 				})}
